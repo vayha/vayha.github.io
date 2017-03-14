@@ -1,29 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>formlularz</title>
+    <title>Formularz</title>
 </head>
-
 <body>
     <form action="https://formspree.io/matiice@interia.pl" method="POST">
-        <label for="name">Imię i Nazwisko</label> <br>
-        <input type="text" id="name" name="imię i nazwisko">
-        <br>
 
-        <label for="email">adres email</label> <br>
-        <input type="email" id="email" name="email">
-        <br>
+        <label for="name">Imię</label><br>
+        <input type="text" id="name" name="imie"><br>
 
-        <label for="tel">telefon</label> <br>
-        <input type="text" id="tel" name="telefon">
-        <br>
+        <label for="name">Nazwisko</label><br>
+        <input type="text" id="nazwisko" name="nazwisko"><br>
 
-        <label for="message">wiadomość</label> <br>
-        <textarea id="message" cols="30" rows="10" name="wiadomość"> </textarea>
-        <input type="submit" value="wyslij">
+        <label for="email">E-mail</label><br>
+        <input type="email" id="email" name="email"><br>
+
+        <label for="tel">Telefon</label><br>
+        <input type="text" id="tel" name="tel"><br><br>
+
+        Miasto:<br>
+        <select name="miasto">
+            <option value="value1">Kraków</option>
+            <option value="value2" selected>Warszawa</option>
+            <option value="value3">Gdańsk</option>
+        </select><br><br> 
+        
+        Płeć:
+        <br>
+        <label for="male">Mężczyzna</label>
+        <input type="radio" name="gender" id="male" value="male"><br>
+        <label for="female">Kobieta</label>
+        <input type="radio" name="gender" id="female" value="female" checked><br><br> 
+        
+        Zgadzam się na podanie danych osobowych
+        <input type="checkbox" id="myCheck" name="zgoda"><br><br>
+
+        <label for="message">Wiadomość</label><br>
+        <textarea id="message" cols="30" rows="5" name="wiadomość"></textarea><br><br>
+
+        <input type="submit" value="Wyślij Dane">
+
     </form>
 </body>
-
 </html>
