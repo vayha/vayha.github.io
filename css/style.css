@@ -1,0 +1,79 @@
+
+
+form {
+    width: 600px;
+    height: 500px;
+
+    background-color: #213b50;
+    padding: 30px;
+    color: white;
+    
+}
+
+input:focus {
+    background-color: #4e708c;
+    border: 1px solid #4e708c;
+}
+input, select, textarea {
+    background-color: #2b4a64;
+    border: 1px solid #2b4a64;
+    
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+}
+
+select {
+    color: white;
+}
+
+input[type="submit"] {
+    background-color: chartreuse;
+    padding: 10px;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 200
+    
+}
+input[type="text"] {
+    width: 50%;
+}
+textarea {
+    width: 50%
+}
+input[type="email"] {
+    width: 50%;
+}
+
+select {
+    width: 50%;
+}
+/*
+
+label {
+dispaly: block;
+}
+
+label[for=male"],
+label[for=female],
+label[for=agrement]
+{
+display: inline;
+}
+
+input:not([name="gender"]),
+select, textarea {
+background-color:34323;
+width: 300px
+border: 1px solid 534534
+}
+
+input[type="checkbox"] {
+width 10px;
+display: inline;
+}
+
+
+
+*/
