@@ -1,80 +1,83 @@
+body {
+    margin: 0;
+    font-family: 'Verdana', sans-serif;
+}
 
 
-form {
-    width: 600px;
-    height: 500px;
+/* obrazek w tle - startowy */
 
-    background-color: #213b50;
-    padding: 30px;
+#background {
+    background-image: url(../obrazy/man-1.jpg);
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+
+
+/* napisy startowe */
+
+.headers {
+    vertical-align: center;
+    text-align: left;
     color: white;
-    
-}
-
-input:focus {
-    background-color: #4e708c;
-    border: 1px solid #4e708c;
-}
-input, select, textarea {
-    background-color: #2b4a64;
-    border: 1px solid #2b4a64;
-    
-}
-
-input:focus, select:focus, textarea:focus {
-    outline: none;
-    background-color: aqua;
-}
-
-select {
-    color: white;
-}
-
-input[type="submit"] {
-    background-color: chartreuse;
-    padding: 10px;
-    font-size: 1.1em;
-    color: white;
-    font-weight: 200
-    
-}
-input[type="text"] {
-    width: 50%;
-}
-textarea {
-    width: 50%
-}
-input[type="email"] {
-    width: 50%;
-}
-
-select {
-    width: 50%;
-}
-/*
-
-label {
-dispaly: block;
-}
-
-label[for=male"],
-label[for=female],
-label[for=agrement]
-{
-display: inline;
-}
-
-input:not([name="gender"]),
-select, textarea {
-background-color:34323;
-width: 300px
-border: 1px solid 534534
-}
-
-input[type="checkbox"] {
-width 10px;
-display: inline;
+    text-transform: uppercase;
+    position: relative;
+    top: 50%;
+    margin-left: 50px;
 }
 
 
+/* responsywność obrazka i tekstu powyżej 1170px */
 
-*/
+@media (min-width: 1170px) {
+    #background {
+        width: 100%;
+    }
+    .text1 {}
+    .text2 {
+        font-size: 1.4em;
+    }
+}
+
+
+/* responsywność obrazka i tekstu dla 992-1170px*/
+
+@media (max-width: 1170px) and (min-width: 992px) {
+    #background {
+        background-image: url(../obrazy/man-2.jpg);
+        height: 70%;
+    }
+    .headers {
+        transform: translateX(60%);
+        top: 10%;
+    }
+    .text1 {
+        font-size: 0.7em;
+    }
+    .text2 {}
+}
+
+
+/*    responsywność poniżej 992px */
+
+@media (max-width: 992px) {
+    #background {
+        background-image: url(../obrazy/man-1.jpg);
+        height: 50%;
+        display: inline-block;
+    }
+    #background .headers {
+        text-align: center;
+        color: black;
+        top: 100%;
+        margin: 0;
+    }
+    .text1 {
+        font-size: 0.7em;
+    }
+    .text2 {
+        font-size: 1em;
+    }
+}
