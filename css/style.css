@@ -1,83 +1,75 @@
+* {
+	box-sizing: border-box;
+}/*============   BODY Z TŁEM==============*/
 body {
-    margin: 0;
-    font-family: 'Verdana', sans-serif;
-}
-
-
-/* obrazek w tle - startowy */
-
-#background {
-    background-image: url(../obrazy/man-1.jpg);
-    height: 100%;
     width: 100%;
+    height: 100%;
+    background-image: url(/img/meadow2.jpg);
+    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    position: absolute;
+
 }
 
-
-/* napisy startowe */
-
-.headers {
-    vertical-align: center;
-    text-align: left;
-    color: white;
-    text-transform: uppercase;
+/*================ ZEWNĘTRZNY BOX===========*/
+#box {
+    width: 600px;
+    height: 600px;
+    border: 2px solid rgba(0,0,0,0);
+    margin: auto; 
     position: relative;
-    top: 50%;
-    margin-left: 50px;
+    background-color: rgba(0,0,0,0);
+    cursor: crosshair;
+    overflow: visible;
+
+}
+/* ====================ANIMACJA KWADRAT CZYLI KACZKA=================*/
+#kwadrat {
+    width: 300px;
+    height: 250px;
+    border: 1px solid rgba(0,0,0,0);
+    position: absolute;
+    top: 46%;
+    right: 46%;
+    transform-origin: center;
+    animation-name: spin;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    background-image: url(/img/d-jpg/2.png);
+    overflow: visible;
+    background-origin: content-box;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+}
+@keyframes spin {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(20deg); height: 80px;}
 }
 
-
-/* responsywność obrazka i tekstu powyżej 1170px */
-
-@media (min-width: 1170px) {
-    #background {
-        width: 100%;
-    }
-    .text1 {}
-    .text2 {
-        font-size: 1.4em;
-    }
+/*   =======   WSTRZYKNIETY NAPIS =============*/
+.napis {
+top: 50%;
+width: 100%;
+text-align: center;
+font-size: 6em;
+color: rgba(215, 10, 0, 1);
+text-transform: uppercase;
+margin: 0;
+transform: translateY(-50%);
+background-color: rgba(148, 214, 0, 0.5);
+position: absolute;
+z-index: 1;   
 }
-
-
-/* responsywność obrazka i tekstu dla 992-1170px*/
-
-@media (max-width: 1170px) and (min-width: 992px) {
-    #background {
-        background-image: url(../obrazy/man-2.jpg);
-        height: 70%;
-    }
-    .headers {
-        transform: translateX(60%);
-        top: 10%;
-    }
-    .text1 {
-        font-size: 0.7em;
-    }
-    .text2 {}
-}
-
-
-/*    responsywność poniżej 992px */
-
-@media (max-width: 992px) {
-    #background {
-        background-image: url(../obrazy/man-1.jpg);
-        height: 50%;
-        display: inline-block;
-    }
-    #background .headers {
-        text-align: center;
-        color: black;
-        top: 100%;
-        margin: 0;
-    }
-    .text1 {
-        font-size: 0.7em;
-    }
-    .text2 {
-        font-size: 1em;
-    }
+/*========= BUTTON=========*/
+#start {
+text-align: center;
+font-size: 40px;
+margin: 0;
+transform: translateY(-50%);
+background-color: rgba(148, 214, 0, 0.5);
+position: absolute;
 }
