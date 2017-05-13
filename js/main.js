@@ -9,8 +9,8 @@ $(function () {
                 var textpar = $('').text();
 
 /*shotgun*/
-                $( "#box" ).click(function() {
-                var audio = new Audio("/img/shotgun.mp3"); audio.play();   
+                $("#box").click(function () {
+                var audio = new Audio("../img/shotgun.mp3"); audio.play();  
 });
                           
                 
@@ -24,33 +24,35 @@ $(function () {
                         var score = parseInt(document.getElementById("score").innerHTML); score++;
                         document.getElementById("score").innerHTML = score;
                         
-                        var audio2 = new Audio("/img/hug.mp3"); audio2.play();
-/* jesli 5 pkt to...*/                        
-                        if (score >= 5) {
-                        
-                            $('.napis').text(textpar + ' WYGRANA! WESOŁYCH ŚWIĄT ').fadeOut(15000);
-                        
-                            var audio3 = new Audio("/img/victory.mp3"); audio3.play();
+                        var audio2 = new Audio("../img/hug.mp3"); audio2.play();
+/* jesli 10 pkt to...*/                        
+                        if (score >= 10) {
+                                            
+                            var audio3 = new Audio("../img/victory.mp3"); audio3.play();
                             
+                            $('.napis').text(textpar + ' WYGRANA! WESOŁYCH ŚWIĄT ').fadeOut(6000, reFresh);
                             };
-
-
+                            function reFresh(){
+                            window.location.reload();
+                            setTimeout(6000); // setTimeout opóznienia zwrot funkcji f.refesh.
+                            };
+                            
                     },
                     
 /*KACZKA UCIEKAJ*/                    
                     'mouseover': function () {
                         var rand = Math.floor((Math.random() * 100));
                         var rand2 = Math.floor((Math.random() * 100));
-                        $(this).hide(200).show(200).animate({
+                        $(this).hide(1).show(1).animate({
                             'left': rand + '%',
                             'top': rand2 + '%',
                             'background-color': 'green',
-                            duration: 30});
+                            duration: 300});
                         
                         if (rand <=50){
-                            $("#kwadrat").css("background-image", "url(/img/d-jpg/2.png)");
+                            $("#kwadrat").css("background-image", "url(../img/2.gif)");
                         }else{
-                            $("#kwadrat").css("background-image", "url(/img/d-jpg/1.png)");
+                            $("#kwadrat").css("background-image", "url(../img/1.gif)");
                         }
                         }
                     });
@@ -58,6 +60,10 @@ $(function () {
                 });
             
   });
+
+
+// $(this).hide(200).show(200).animate
+
 
 /*document.getElementById('kwadrat').onclick=function(){
     
